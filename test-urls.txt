@@ -1,0 +1,20 @@
+# GrabZilla 2.0 Test URLs
+
+## Single URLs
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://vimeo.com/148751763
+
+## Playlist
+https://www.youtube.com/playlist?list=PLFs4vir_WsTwEd-nJgVJCZPNL3HALHHpF
+
+## Multiple URLs in text
+Here's a YouTube video: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+And a Vimeo video: https://vimeo.com/148751763
+And a YouTube playlist: https://www.youtube.com/playlist?list=PLFs4vir_WsTwEd-nJgVJCZPNL3HALHHpF
+
+## URL with tracking parameters
+https://www.youtube.com/watch?v=dQw4w9WgXcQ&utm_source=test&utm_medium=test
+
+## Duplicate URLs
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://www.youtube.com/watch?v=dQw4w9WgXcQ 

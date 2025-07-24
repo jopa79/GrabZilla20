@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Required for network access -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    
+    <!-- Required for HTTPS connections -->
+    <key>com.apple.security.network.server</key>
+    <false/>
+    
+    <!-- Required for file system access -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    
+    <!-- Required for downloading files -->
+    <key>com.apple.security.files.downloads.read-write</key>
+    <true/>
+    
+    <!-- Sandbox entitlement - restricts app capabilities -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    
+    <!-- Hardened runtime protection -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <false/>
+    
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <false/>
+    
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <false/>
+    
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <false/>
+    
+    <!-- Required for spawning child processes (yt-dlp, ffmpeg) -->
+    <key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
+    <array>
+        <string>com.apple.system.logger</string>
+    </array>
+    
+    <!-- Allow camera/microphone access if needed for future features -->
+    <key>com.apple.security.device.camera</key>
+    <false/>
+    
+    <key>com.apple.security.device.microphone</key>
+    <false/>
+    
+    <!-- Allow system extension communication if needed -->
+    <key>com.apple.security.system-extension.install</key>
+    <false/>
+    
+    <!-- Disable dangerous capabilities -->
+    <key>com.apple.security.device.bluetooth</key>
+    <false/>
+    
+    <key>com.apple.security.device.usb</key>
+    <false/>
+    
+    <key>com.apple.security.print</key>
+    <false/>
+    
+    <!-- Runtime security flags -->
+    <key>com.apple.security.cs.debugger</key>
+    <false/>
+</dict>
+</plist>

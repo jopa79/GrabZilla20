@@ -1,0 +1,413 @@
+
+> grabzilla-2.0@2.0.0 tauri
+> tauri dev
+
+     Running DevCommand (`cargo  run --no-default-features --color always --`)
+        Info Watching /Users/admin/RnD/GrabZilla20/src-tauri for changes...
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `task`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:323:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m323[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let task = tokio::spawn(async move {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[33m^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_task`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_variables)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `tx`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:356:21[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m356[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                let tx = progress_tx.clone();[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[33m^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_tx`[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `id`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:357:21[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m357[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                let id = download_id.clone();[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[33m^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_id`[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unreachable expression[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:385:9[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m384[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        app_handle.restart();[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;12many code following this expression is unreachable[0m
+[0m[1m[38;5;12m385[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Ok(())[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^[0m[0m [0m[0m[1m[33munreachable expression[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unreachable_code)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused import: `std::io::Read`[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:8:5[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m8[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse std::io::Read;[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `public_key`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:184:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m184[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let public_key = self.get_public_key()?;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[33m^^^^^^^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_public_key`[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `data`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:183:32[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m183[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn verify_signature(&self, data: &[u8], signature: &str) -> Result<bool> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                [0m[0m[1m[33m^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_data`[0m
+
+[0m[1m[33mwarning[0m[0m[1m: field `priority` is never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/url_parser.rs:49:9[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m46[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct PlatformPattern {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m---------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m49[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub priority: u8,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(dead_code)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: struct `ProgressTracker` is never constructed[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0msrc/progress_tracker.rs:5:12[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m5[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct ProgressTracker {[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `ProgressTracker` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: struct `ProgressPoint` is never constructed[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/progress_tracker.rs:15:8[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m15[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mstruct ProgressPoint {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: multiple associated items are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/progress_tracker.rs:21:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m20[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl ProgressTracker {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;12massociated items in this implementation[0m
+[0m[1m[38;5;12m21[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn new(total_bytes: Option<u64>) -> Self {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m33[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn update_progress(&mut self, bytes_downloaded: u64) {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m52[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_progress_percentage(&self) -> f32 {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m61[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_download_speed(&self) -> Option<f64> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m90[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_eta(&self) -> Option<Duration> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m101[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_elapsed_time(&self) -> Duration {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m105[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_speed(bytes_per_second: f64) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m118[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_eta(eta: Duration) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m130[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_bytes(bytes: u64) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m149[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn is_stalled(&self) -> bool {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m154[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_average_speed(&self) -> Option<f64> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m167[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_detailed_stats(&self) -> ProgressStats {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: struct `ProgressStats` is never constructed[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/progress_tracker.rs:182:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m182[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct ProgressStats {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `ProgressStats` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: methods `format_current_speed`, `format_average_speed`, `format_eta`, and `format_progress` are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/progress_tracker.rs:194:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m193[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl ProgressStats {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m------------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m194[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_current_speed(&self) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m200[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_average_speed(&self) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m206[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_eta(&self) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m212[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn format_progress(&self) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: field `config` is never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/retry_manager.rs:27:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m26[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct RetryManager {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+[0m[1m[38;5;12m27[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    config: RetryConfig,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `RetryManager` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: methods `retry_with_backoff`, `calculate_delay`, `should_retry_error`, and `get_retry_delay` are never used[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/retry_manager.rs:39:18[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m30[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl RetryManager {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m-----------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m39[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn retry_with_backoff<T, E, F, Fut>(&self, mut operation: F) -> Result<T, E>[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m69[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn calculate_delay(&self, attempt: u32) -> u64 {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m76[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn should_retry_error(&self, error: &str) -> bool {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m95[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_retry_delay(&self, attempt: u32) -> Duration {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: fields `id`, `attempt`, `last_error`, and `next_retry` are never read[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/retry_manager.rs:102:9[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m101[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct RetryableDownload {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m-----------------[0m[0m [0m[0m[1m[38;5;12mfields in this struct[0m
+[0m[1m[38;5;12m102[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub id: String,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^[0m
+[0m[1m[38;5;12m103[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub attempt: u32,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^[0m
+[0m[1m[38;5;12m104[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub last_error: Option<String>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^[0m
+[0m[1m[38;5;12m105[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub next_retry: Option<std::time::Instant>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[33m^^^^^^^^^^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `RetryableDownload` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: associated items `new`, `record_failure`, `is_ready_for_retry`, and `reset` are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/retry_manager.rs:109:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m108[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl RetryableDownload {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m----------------------[0m[0m [0m[0m[1m[38;5;12massociated items in this implementation[0m
+[0m[1m[38;5;12m109[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn new(id: String) -> Self {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m118[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn record_failure(&mut self, error: String, retry_manager: &RetryManager) -> bool {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m135[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn is_ready_for_retry(&self) -> bool {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m143[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn reset(&mut self) {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: field `allowed_processes` is never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/security_manager.rs:24:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m21[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct SecurityManager {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m---------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m24[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    allowed_processes: Vec<String>,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^^[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `SecurityManager` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: methods `validate_process`, `validate_process_name`, and `create_secure_command` are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/security_manager.rs:143:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m28[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl SecurityManager {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m143[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn validate_process(&self, process_name: &str) -> bool {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m162[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn validate_process_name(&self, process_name: &str) -> bool {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m166[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn create_secure_command(&self, program: &str, args: &[&str]) -> Result<Command> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: struct `SecureProcess` is never constructed[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0msrc/secure_process.rs:8:12[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m8[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct SecureProcess {[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `SecureProcess` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: multiple associated items are never used[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/secure_process.rs:13:12[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m12[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl SecureProcess {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m------------------[0m[0m [0m[0m[1m[38;5;12massociated items in this implementation[0m
+[0m[1m[38;5;12m13[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn new() -> Result<Self> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m20[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn create_secure_command(&self, program: &str, args: &[&str]) -> Result<Command> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m25[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn create_secure_async_command(&self, program: &str, args: &[&str]) -> Result<AsyncCommand> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m34[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn spawn_secure(&self, mut cmd: Command) -> Result<Child> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m40[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn spawn_secure_async(&self, mut cmd: AsyncCommand) -> Result<AsyncChild> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m46[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn validate_network_access(&self, url: &str) -> bool {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m51[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn validate_file_path(&self, path: &str) -> Result<String> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m56[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn is_running_elevated(&self) -> Result<bool> {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m67[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn convert_to_async_command(sync_cmd: Command) -> AsyncCommand {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: struct `ConversionRequest` is never constructed[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/ffmpeg_controller.rs:33:12[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m33[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct ConversionRequest {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `ConversionRequest` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: field `security_manager` is never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/ffmpeg_controller.rs:45:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m43[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct FFmpegController {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+[0m[1m[38;5;12m44[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    ffmpeg_path: Option<PathBuf>,[0m
+[0m[1m[38;5;12m45[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    security_manager: SecurityManager,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `FFmpegController` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis[0m
+
+[0m[1m[33mwarning[0m[0m[1m: methods `convert_video`, `add_format_args`, `get_output_extension`, and `probe_video_info` are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/ffmpeg_controller.rs:81:18[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m48[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl FFmpegController {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m---------------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m81[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn convert_video(&self, request: ConversionRequest) -> Result<PathBuf> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m181[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn add_format_args(&self, cmd: &mut AsyncCommand, format: &ConversionFormat) -> Result<()> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m219[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn get_output_extension(&self, format: &ConversionFormat) -> &str {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m228[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn probe_video_info(&self, file_path: &Path) -> Result<VideoInfo> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: associated function `from_probe_data` is never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/ffmpeg_controller.rs:288:8[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m287[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl VideoInfo {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m--------------[0m[0m [0m[0m[1m[38;5;12massociated function in this implementation[0m
+[0m[1m[38;5;12m288[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn from_probe_data(data: ProbeData) -> Self {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: function `parse_ffmpeg_progress` is never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/ffmpeg_controller.rs:320:4[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m320[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mfn parse_ffmpeg_progress(line: &str) -> Option<f32> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m    [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: fields `retry_downloads`, `retry_manager`, and `security_manager` are never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:82:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m79[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct DownloadManager {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m---------------[0m[0m [0m[0m[1m[38;5;12mfields in this struct[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m82[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    retry_downloads: Arc<Mutex<HashMap<String, RetryableDownload>>>,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m88[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    retry_manager: RetryManager,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m89[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    security_manager: SecurityManager,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: methods `pause_download`, `resume_download`, `get_active_downloads`, `create_progress_adapter`, `set_progress_callback`, and `start_single_download` are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:248:18[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m98[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl DownloadManager {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m248[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn pause_download(&self, _id: &str) -> Result<()> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m255[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn resume_download(&self, _id: &str) -> Result<()> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m267[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn get_active_downloads(&self) -> Vec<String> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m271[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn create_progress_adapter(&self, download_id: String) -> Option<mpsc::UnboundedSender<ConversionProgress>> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m299[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn set_progress_callback(&mut self, tx: mpsc::UnboundedSender<DownloadProgress>) {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m303[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    async fn start_single_download([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: function `find_downloaded_file` is never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:555:10[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m555[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0masync fn find_downloaded_file(output_dir: &PathBuf) -> Result<PathBuf> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m          [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: function `format_quality_selector` is never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/download_manager.rs:582:4[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m582[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mfn format_quality_selector(quality: &str) -> String {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m    [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: field `security_manager` is never read[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:43:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m42[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct UpdateManager {[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;12m-------------[0m[0m [0m[0m[1m[38;5;12mfield in this struct[0m
+[0m[1m[38;5;12m43[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    security_manager: SecurityManager,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[33mwarning[0m[0m[1m: multiple methods are never used[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/update_manager.rs:149:18[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m49[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mimpl UpdateManager {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m------------------[0m[0m [0m[0m[1m[38;5;12mmethods in this implementation[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m149[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn verify_update(&self, update: &UpdateInfo) -> Result<bool> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m170[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    async fn download_update_data(&self, update: &UpdateInfo) -> Result<Vec<u8>> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m183[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn verify_signature(&self, data: &[u8], signature: &str) -> Result<bool> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m210[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn get_public_key(&self) -> Result<String> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m217[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn verify_file_integrity(&self, data: &[u8]) -> Result<bool> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m382[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    async fn perform_update_and_restart(&self, app_handle: &AppHandle, version: &str) -> Result<()> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m              [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m388[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub async fn install_and_restart([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[33m^^^^^^^^^^^^^^^^^^^[0m
+
+[1m[33mwarning[0m[1m:[0m `app` (lib) generated 32 warnings
+[1m[32m    Finished[0m ]8;;https://doc.rust-lang.org/cargo/reference/profiles.html#default-profiles\`dev` profile [unoptimized + debuginfo]]8;;\ target(s) in 0.55s
+[1m[32m     Running[0m `target/debug/app`

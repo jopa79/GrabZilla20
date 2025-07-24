@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Custom scrollbar styles for better dark theme integration */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2b2b2b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b6b6b;
+  border-radius: 4px;
+  border: 2px solid #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #959595;
+}
+
+::-webkit-scrollbar-corner {
+  background: #2b2b2b;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(33, 150, 243, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(33, 150, 243, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #2196F3;
+  outline-offset: 2px;
+}
+
+/* Disable default button styles */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Prevent text selection on non-text elements */
+button, .no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
