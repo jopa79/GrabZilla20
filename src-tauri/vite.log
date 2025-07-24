@@ -1,0 +1,51 @@
+
+> grabzilla-2.0@2.0.0 dev
+> vite
+
+
+  VITE v5.4.19  ready in 69 ms
+
+  ➜  Local:   http://localhost:1420/
+  ➜  Network: use --host to expose
+00:34:26 [vite] hmr update /src/App.tsx
+00:34:29 [vite] hmr update /src/App.tsx
+00:34:39 [vite] hmr update /src/App.tsx
+00:36:57 [vite] Pre-transform error: Failed to resolve import "@tauri-apps/api/tauri" from "src/components/DependencyManager.tsx". Does the file exist?
+00:36:57 [vite] Internal server error: Failed to resolve import "@tauri-apps/api/tauri" from "src/components/DependencyManager.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/joachimpaul/Documents/GitHub/GrabZilla20/src/components/DependencyManager.tsx:26:23
+  41 |    Delete as DeleteIcon
+  42 |  } from "@mui/icons-material";
+  43 |  import { invoke } from "@tauri-apps/api/tauri";
+     |                          ^
+  44 |  import { listen } from "@tauri-apps/api/event";
+  45 |  const DependencyManager = () => {
+      at TransformPluginContext._formatError (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49258:41)
+      at TransformPluginContext.error (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49253:16)
+      at normalizeUrl (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64291:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64423:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64350:7)
+      at async PluginContainer.transform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49099:18)
+      at async loadAndTransform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:62105:24)
+00:44:28 [vite] Internal server error: Failed to resolve import "@tauri-apps/api/tauri" from "src/components/DependencyManager.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/joachimpaul/Documents/GitHub/GrabZilla20/src/components/DependencyManager.tsx:26:23
+  41 |    Delete as DeleteIcon
+  42 |  } from "@mui/icons-material";
+  43 |  import { invoke } from "@tauri-apps/api/tauri";
+     |                          ^
+  44 |  import { listen } from "@tauri-apps/api/event";
+  45 |  const DependencyManager = () => {
+      at TransformPluginContext._formatError (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49258:41)
+      at TransformPluginContext.error (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49253:16)
+      at normalizeUrl (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64291:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64423:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:64350:7)
+      at async PluginContainer.transform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49099:18)
+      at async loadAndTransform (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/joachimpaul/Documents/GitHub/GrabZilla20/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:62105:24)

@@ -6,6 +6,7 @@ import { URLInput } from './components/URLInput';
 import { DownloadQueue } from './components/DownloadQueue';
 import { SettingsPanel } from './components/SettingsPanel';
 import { DuplicateConfirmationModal } from './components/DuplicateConfirmationModal';
+import DependencyManager from './components/DependencyManager';
 import { URLExtractionResult } from './types';
 import { useDownloads } from './hooks/useDownloads';
 
@@ -168,6 +169,7 @@ function App() {
             >
               <Tab label={`Downloads (${downloads.length})`} />
               <Tab label="Settings" />
+              <Tab label="Dependencies" />
             </Tabs>
           </Box>
 
@@ -217,6 +219,10 @@ function App() {
                 onOpenOutputFolder={handleOpenOutputFolder}
                 onResetSettings={handleResetSettings}
               />
+            </TabPanel>
+
+            <TabPanel value={currentTab} index={2}>
+              <DependencyManager />
             </TabPanel>
           </Box>
 

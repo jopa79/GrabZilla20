@@ -55,7 +55,30 @@ impl FFmpegController {
     }
 
     async fn ensure_ffmpeg(&mut self) -> Result<()> {
-        // Check if FFmpeg is available in PATH
+        // First, try to get FFmpeg path from the global dependency manager
+        if let Some(dependency_manager) = crate::commands::get_dependency_manager_if_initialized() {
+            let dep_manager = dependency_manager.lock().await;
+            let bundled_path = dep_manager.get_ffmpeg_path();
+            
+            // Check if bundled version exists and works
+            if bundled_path.exists() {
+                if let Ok(output) = AsyncCommand::new(&bundled_path)
+                    .arg("-version")
+                    .stdout(Stdio::piped())
+                    .stderr(Stdio::piped())
+                    .output()
+                    .await
+                {
+                    if output.status.success() {
+                        self.ffmpeg_path = Some(bundled_path);
+                        println!("Using bundled FFmpeg at: {}", self.ffmpeg_path.as_ref().unwrap().display());
+                        return Ok(());
+                    }
+                }
+            }
+        }
+
+        // Fall back to system-installed FFmpeg
         if let Ok(output) = AsyncCommand::new("ffmpeg")
             .arg("-version")
             .stdout(Stdio::piped())
@@ -65,13 +88,12 @@ impl FFmpegController {
         {
             if output.status.success() {
                 self.ffmpeg_path = Some(PathBuf::from("ffmpeg"));
+                println!("Using system FFmpeg");
                 return Ok(());
             }
         }
-
-        // TODO: Download FFmpeg if not found
-        // For now, just check if it's available
-        Err(anyhow!("FFmpeg not found. Please install FFmpeg first."))
+        
+        Err(anyhow!("FFmpeg not found. Please install FFmpeg using the Dependencies tab."))
     }
 
     pub async fn convert_video(&self, request: ConversionRequest) -> Result<PathBuf> {

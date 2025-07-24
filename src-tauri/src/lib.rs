@@ -7,6 +7,7 @@ mod security_manager;
 mod ffmpeg_controller;
 mod download_manager;
 mod update_manager;
+mod dependency_manager;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -50,6 +51,11 @@ pub fn run() {
       commands::rollback_update,
       commands::cleanup_old_backups,
       commands::open_download_folder,
+      commands::check_dependencies,
+      commands::install_yt_dlp,
+      commands::install_ffmpeg,
+      commands::uninstall_dependency,
+      commands::get_dependency_paths,
     ])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");

@@ -9,6 +9,7 @@ use tokio::process::Command as AsyncCommand;
 use tokio::sync::mpsc;
 use crate::ffmpeg_controller::{FFmpegController, ConversionFormat, ConversionRequest, ConversionProgress};
 use crate::security_manager::SecurityManager;
+// use crate::dependency_manager::DependencyManager; // Unused import
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct VideoMetadata {
@@ -119,7 +120,27 @@ impl DownloadManager {
     }
 
     async fn ensure_ytdlp(&mut self) -> Result<()> {
-        // List of common yt-dlp installation paths
+        // First, try to get yt-dlp path from the global static (set in commands.rs)
+        if let Some(dependency_manager) = crate::commands::get_dependency_manager_if_initialized() {
+            let dep_manager = dependency_manager.lock().await;
+            let bundled_path = dep_manager.get_yt_dlp_path();
+            
+            // Check if bundled version exists and works
+            if bundled_path.exists() {
+                if let Ok(output) = Command::new(&bundled_path)
+                    .arg("--version")
+                    .output()
+                {
+                    if output.status.success() {
+                        self.ytdlp_path = Some(bundled_path);
+                        println!("Using bundled yt-dlp at: {}", self.ytdlp_path.as_ref().unwrap().display());
+                        return Ok(());
+                    }
+                }
+            }
+        }
+
+        // Fall back to system-installed yt-dlp
         let possible_paths = vec![
             "/opt/homebrew/bin/yt-dlp",  // Homebrew on Apple Silicon
             "/usr/local/bin/yt-dlp",     // Homebrew on Intel Mac
@@ -134,15 +155,13 @@ impl DownloadManager {
             {
                 if output.status.success() {
                     self.ytdlp_path = Some(PathBuf::from(path));
-                    println!("Found yt-dlp at: {}", path);
+                    println!("Found system yt-dlp at: {}", path);
                     return Ok(());
                 }
             }
         }
 
-        // TODO: Download yt-dlp if not found
-        // For now, just check if it's available
-        Err(anyhow!("yt-dlp not found. Please install yt-dlp first."))
+        Err(anyhow!("yt-dlp not found. Please install yt-dlp using the Dependencies tab."))
     }
 
     pub async fn get_video_metadata(&self, url: &str) -> Result<VideoMetadata> {

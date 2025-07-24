@@ -3,6 +3,7 @@ use crate::download_manager::{DownloadManager, DownloadRequest, VideoMetadata};
 use crate::ffmpeg_controller::ConversionFormat;
 use crate::security_manager::SecurityManager;
 use crate::update_manager::{UpdateManager, UpdateChannel, UpdateInfo};
+use crate::dependency_manager::{DependencyManager, DependencyStatus};
 use anyhow::Result;
 use std::sync::{OnceLock, Arc};
 use tokio::sync::Mutex;
@@ -15,6 +16,7 @@ static URL_EXTRACTOR: OnceLock<URLExtractor> = OnceLock::new();
 static DOWNLOAD_MANAGER: OnceLock<Arc<Mutex<DownloadManager>>> = OnceLock::new();
 static SECURITY_MANAGER: OnceLock<SecurityManager> = OnceLock::new();
 static UPDATE_MANAGER: OnceLock<Arc<Mutex<UpdateManager>>> = OnceLock::new();
+static DEPENDENCY_MANAGER: OnceLock<Arc<Mutex<DependencyManager>>> = OnceLock::new();
 
 fn get_url_extractor() -> &'static URLExtractor {
     URL_EXTRACTOR.get_or_init(|| {
@@ -40,6 +42,17 @@ fn get_update_manager(app_handle: &AppHandle) -> Arc<Mutex<UpdateManager>> {
         let manager = UpdateManager::new(app_handle.clone()).expect("Failed to initialize update manager");
         Arc::new(Mutex::new(manager))
     }).clone()
+}
+
+fn get_dependency_manager(app_handle: &AppHandle) -> Arc<Mutex<DependencyManager>> {
+    DEPENDENCY_MANAGER.get_or_init(|| {
+        let manager = DependencyManager::new(app_handle).expect("Failed to initialize dependency manager");
+        Arc::new(Mutex::new(manager))
+    }).clone()
+}
+
+pub fn get_dependency_manager_if_initialized() -> Option<Arc<Mutex<DependencyManager>>> {
+    DEPENDENCY_MANAGER.get().cloned()
 }
 
 #[tauri::command]
@@ -711,4 +724,57 @@ pub async fn open_download_folder(id: String) -> Result<(), String> {
             Err(error_msg)
         }
     }
+}
+
+// Dependency Management Commands
+
+#[tauri::command]
+pub async fn check_dependencies(app_handle: AppHandle) -> Result<DependencyStatus, String> {
+    let manager = get_dependency_manager(&app_handle);
+    let manager = manager.lock().await;
+    
+    manager.check_dependencies()
+        .await
+        .map_err(|e| format!("Failed to check dependencies: {}", e))
+}
+
+#[tauri::command]
+pub async fn install_yt_dlp(app_handle: AppHandle) -> Result<(), String> {
+    let manager = get_dependency_manager(&app_handle);
+    let manager = manager.lock().await;
+    
+    manager.install_yt_dlp(&app_handle)
+        .await
+        .map_err(|e| format!("Failed to install yt-dlp: {}", e))
+}
+
+#[tauri::command]
+pub async fn install_ffmpeg(app_handle: AppHandle) -> Result<(), String> {
+    let manager = get_dependency_manager(&app_handle);
+    let manager = manager.lock().await;
+    
+    manager.install_ffmpeg(&app_handle)
+        .await
+        .map_err(|e| format!("Failed to install FFmpeg: {}", e))
+}
+
+#[tauri::command]
+pub async fn uninstall_dependency(app_handle: AppHandle, dependency: String) -> Result<(), String> {
+    let manager = get_dependency_manager(&app_handle);
+    let manager = manager.lock().await;
+    
+    manager.uninstall_dependency(&dependency)
+        .await
+        .map_err(|e| format!("Failed to uninstall {}: {}", dependency, e))
+}
+
+#[tauri::command]
+pub async fn get_dependency_paths(app_handle: AppHandle) -> Result<(String, String), String> {
+    let manager = get_dependency_manager(&app_handle);
+    let manager = manager.lock().await;
+    
+    let yt_dlp_path = manager.get_yt_dlp_path().to_string_lossy().to_string();
+    let ffmpeg_path = manager.get_ffmpeg_path().to_string_lossy().to_string();
+    
+    Ok((yt_dlp_path, ffmpeg_path))
 }
