@@ -4,8 +4,7 @@
   "version": "2.0.0",
   "identifier": "com.grabzilla.app",
   "build": {
-    "frontendDist": "../dist",
-    "devUrl": "http://localhost:1420"
+    "frontendDist": "../dist"
   },
   "app": {
     "windows": [
