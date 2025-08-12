@@ -176,11 +176,12 @@ impl DownloadManager {
            .arg("--user-agent")
            .arg("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
            .arg("--extractor-retries")
-           .arg("3")
+           .arg("5")
            .arg("--sleep-interval")
            .arg("1")
            .arg("--max-sleep-interval")
-           .arg("5");
+           .arg("5")
+           .arg("--no-check-certificate");
         
         if is_playlist {
             // For playlists, get playlist info instead of individual videos
@@ -265,11 +266,12 @@ impl DownloadManager {
             .arg("--user-agent")
             .arg("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
             .arg("--extractor-retries")
-            .arg("3")
+            .arg("5")
             .arg("--sleep-interval")
             .arg("1")
             .arg("--max-sleep-interval")
             .arg("5")
+            .arg("--no-check-certificate")
             .arg(playlist_url)
             .stdout(Stdio::piped())
             .stderr(Stdio::piped())
@@ -601,6 +603,15 @@ impl DownloadManager {
                         let mut cmd = tokio::process::Command::new(&ytdlp_path);
                         cmd.arg("--progress")
                            .arg("--newline")
+                           .arg("--user-agent")
+                           .arg("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+                           .arg("--extractor-retries")
+                           .arg("5")
+                           .arg("--sleep-interval")
+                           .arg("1")
+                           .arg("--max-sleep-interval")
+                           .arg("5")
+                           .arg("--no-check-certificate")
                            .arg("-f")
                            .arg(&quality_selector)
                            .arg("-o")
