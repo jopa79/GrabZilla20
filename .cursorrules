@@ -1,0 +1,222 @@
+# GrabZilla 2.0 - Cursor Rules
+
+## Project Overview
+GrabZilla 2.0 is a professional-grade video downloading and transcoding desktop application built with:
+- **Frontend**: React 18 + TypeScript + Material-UI + Vite
+- **Backend**: Rust + Tauri 2.5
+- **Architecture**: Cross-platform desktop app with secure Rust backend and modern React frontend
+
+## Core Technologies & Patterns
+
+### Frontend Stack
+- **React 18** with functional components and hooks
+- **TypeScript** with strict type checking
+- **Material-UI (MUI)** for component library and theming
+- **Zustand** for state management (though currently using React hooks)
+- **Vite** for build tooling and development server
+- **React Window** for virtualized lists
+
+### Backend Stack
+- **Rust** with async/await and tokio runtime
+- **Tauri 2.5** for desktop app framework
+- **Serde** for serialization/deserialization
+- **Anyhow** for error handling
+- **Regex** for URL pattern matching
+- **Reqwest** for HTTP requests
+
+## Code Style & Conventions
+
+### TypeScript/React Patterns
+```typescript
+// Use functional components with hooks
+export function ComponentName({ prop1, prop2 }: ComponentProps) {
+  const [state, setState] = useState<StateType>(initialValue);
+  
+  const handleAction = useCallback((param: ParamType) => {
+    // Implementation
+  }, [dependencies]);
+  
+  return <JSX />;
+}
+
+// Use proper TypeScript interfaces
+interface ComponentProps {
+  requiredProp: string;
+  optionalProp?: number;
+  onAction: (value: string) => void;
+}
+
+// Use enums for constants
+enum Status {
+  Loading = 'loading',
+  Success = 'success',
+  Error = 'error'
+}
+```
+
+### Rust Patterns
+```rust
+// Use proper error handling with anyhow
+use anyhow::{Result, anyhow};
+
+pub async fn function_name(param: String) -> Result<ReturnType, String> {
+    // Implementation with proper error propagation
+    Ok(result)
+}
+
+// Use serde for serialization
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DataStructure {
+    pub field: String,
+    pub optional_field: Option<String>,
+}
+
+// Use proper async patterns with tokio
+use tokio::sync::Mutex;
+use std::sync::Arc;
+
+pub struct Manager {
+    data: Arc<Mutex<HashMap<String, Value>>>,
+}
+```
+
+## Architecture Patterns
+
+### Frontend Architecture
+- **Component Structure**: Functional components in `/src/components/`
+- **Hooks**: Custom hooks in `/src/hooks/` for business logic
+- **Services**: API layer in `/src/services/` for Tauri communication
+- **Types**: Shared types in `/src/types/` with proper TypeScript definitions
+- **Styles**: Material-UI theming in `/src/styles/` with dark theme
+
+### Backend Architecture
+- **Commands**: Tauri commands in `/src-tauri/src/commands.rs`
+- **Modules**: Separate modules for different concerns (download_manager, url_parser, etc.)
+- **Error Handling**: Consistent error handling with proper error propagation
+- **Async Patterns**: Use tokio for async operations and proper concurrency
+
+### State Management
+- **Frontend**: React hooks with useCallback for performance
+- **Backend**: Arc<Mutex<>> for shared state between async tasks
+- **Communication**: Tauri events for real-time updates between frontend/backend
+
+## File Organization
+
+### Frontend Structure
+```
+src/
+├── components/          # React components
+│   ├── URLInput.tsx    # URL input and extraction
+│   ├── DownloadQueue.tsx # Download management UI
+│   ├── SettingsPanel.tsx # Application settings
+│   └── ...
+├── hooks/              # Custom React hooks
+│   └── useDownloads.ts # Download state management
+├── services/           # API services
+│   └── tauri-api.ts   # Tauri API wrapper
+├── types/              # TypeScript type definitions
+│   └── index.ts       # Shared types
+├── styles/             # Styling and theming
+│   ├── theme.ts       # Material-UI theme
+│   └── global.css     # Global styles
+└── App.tsx            # Main application component
+```
+
+### Backend Structure
+```
+src-tauri/src/
+├── commands.rs         # Tauri command handlers
+├── download_manager.rs # Download orchestration
+├── url_parser.rs      # URL extraction and validation
+├── ffmpeg_controller.rs # Video conversion
+├── security_manager.rs # Security and validation
+├── dependency_manager.rs # External tool management
+├── update_manager.rs   # Application updates
+└── lib.rs             # Module declarations
+```
+
+## Development Guidelines
+
+### TypeScript Best Practices
+- Use strict TypeScript configuration
+- Define proper interfaces for all data structures
+- Use enums for constants and status values
+- Prefer `useCallback` for event handlers to prevent unnecessary re-renders
+- Use proper error boundaries and error handling
+
+### Rust Best Practices
+- Use `anyhow::Result` for error handling
+- Implement proper async patterns with tokio
+- Use `Arc<Mutex<>>` for shared state
+- Follow Rust naming conventions (snake_case)
+- Use proper serialization with serde
+
+### Component Patterns
+- Keep components focused and single-purpose
+- Use Material-UI components consistently
+- Implement proper loading and error states
+- Use proper TypeScript prop interfaces
+- Follow React hooks best practices
+
+### API Communication
+- Use Tauri commands for backend communication
+- Implement proper error handling for API calls
+- Use events for real-time updates (download progress)
+- Validate data on both frontend and backend
+
+## Specific Patterns for GrabZilla
+
+### Download Management
+- Use `DownloadItem` interface for download state
+- Implement proper status management (queued, downloading, completed, etc.)
+- Use progress callbacks for real-time updates
+- Handle duplicate detection and user confirmation
+
+### URL Processing
+- Extract URLs from text using regex patterns
+- Support multiple platforms (YouTube, Vimeo, TikTok, etc.)
+- Handle playlist expansion
+- Implement proper URL validation and cleaning
+
+### Video Conversion
+- Support multiple output formats (H.264, DNxHR, ProRes, MP3)
+- Use FFmpeg for video processing
+- Implement progress tracking for conversions
+- Handle file naming with quality and format suffixes
+
+### Security Considerations
+- Validate file paths and URLs
+- Sanitize user inputs
+- Implement proper privilege checking
+- Use secure file operations
+
+## Testing Patterns
+- Use proper error handling and logging
+- Implement fallback mechanisms for external dependencies
+- Test both Tauri and web environments
+- Use proper async testing patterns
+
+## Performance Considerations
+- Use React.memo for expensive components
+- Implement proper concurrency control for downloads
+- Use virtualized lists for large datasets
+- Optimize bundle size with proper imports
+
+## Common Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run tauri dev` - Run Tauri development
+- `npm run tauri build` - Build Tauri application
+
+## Error Handling
+- Use consistent error messages
+- Implement proper user feedback
+- Log errors appropriately
+- Provide fallback mechanisms
+
+## Code Quality
+- Follow TypeScript strict mode
+- Use proper Rust clippy suggestions
+- Implement proper error handling
+- Use consistent naming conventions
+- Write self-documenting code with proper comments
